@@ -1,6 +1,21 @@
-from django.http import HttpResponse
-from django.template import loader
+from django.shortcuts import render
 
-def ManTitle(request):
-  template = loader.get_template('myfirst.html')
-  return HttpResponse(template.render())
+def StartingPoint(request):
+  
+  return render(request, 'ManProject/myfirst.html')
+
+def TeamMem(request):
+  
+  return render(request, 'ManProject/team.html')
+
+def TaskTable(request):
+  
+  return render(request, 'ManProject/tasks.html')
+
+def SearchTitle(request):
+  
+  return render(request, 'ManProject/search.html')
+
+def AddTask(request):
+  
+  return render(request, 'ManProject/addtask.html')

@@ -1,0 +1,94 @@
+{% extends "layouts/base.html" %}
+{% block title %}Tasks{% endblock %}
+{% block content %}
+<style>
+    table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    }
+   </style>
+
+<table style="width:70%">
+    <caption>Team Assigned Tasks Table:</br></caption>
+    <tr>
+        <th style="width:5%">No.</th>
+        <th style="width:15%">Task Title</th>
+        <th >Task Description</th>
+        <th style="width:20%">Task Holder</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td >Linked list initialize</td>
+        <td >initialize a linked list to be used in the project (the numbers should be automaticlly generated)</td>
+        <td >Salman Abdullah</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td >Search Function</td>
+        <td >Creating a search function that take a number and search for it in linked list</td>
+        <td >Saleh Sulaiman</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td >Sort Function</td>
+        <td >Creating a sort function for a linked list to sort in ascending order</td>
+        <td >Khalid Ibrahim</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td >Delete Function</td>
+        <td >Creating a delete function for a linked list to delete the element entered by the user</td>
+        <td >Mohammed Ali</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td >Add Function</td>
+        <td >Creating a Add function for a linked list to Add elements entered by the user to the linked list</td>
+        <td >Sarah Abdulrahman</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td >Main Function</td>
+        <td >Creating the main function and make it display a list of functions to choose from</td>
+        <td >Fatima Fares</td>
+    </tr>
+
+</table>
+</br></br></br>
+
+<table style="width:56%">
+    <caption>Team Not Yet Assigned Tasks Table:</br></caption>
+    <tr>
+        <th style="width:6%">No.</th>
+        <th style="width:19%">Task Title</th>
+        <th >Task Description</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td >Display Function</td>
+        <td >A function to display the linked list (it should use the sort fucntion to display in order)</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td >Attendance Function</td>
+        <td >A function to take students attendance and count the absent and present students</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td >Avg Marks Function</td>
+        <td >A function to get the average marks for a single student</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td >Class Marks Function</td>
+        <td >A function to get the average marks of the students of a single class</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td >Level Marks Function</td>
+        <td >A function to get the average marks of the students of the whole level</td>
+    </tr>
+</table>
+</br>
+<a href="\">Go Back</a><br/><br/>
+{% endblock content %}
