@@ -1,23 +1,12 @@
+{% extends "layouts/base.html" %}
+{% block title %}Add Task{% endblock %}
 {% block content %}
+<h3>Add a task</h3>
 <form method="post">
- {% csrf_token %} 
- <label>Task Title:</label></br>
- <input type="text" name="title" placeholder="enter a title"/> </br>
- <label>Task Description:</label></br>
- <textarea name="description" rows="1" cols="50"></textarea></br>
- <label>Task Holder:</label></br>
- <select name="selectedgenre">
-    <option selected>None</option>
-   <option value="Salman">Salman Abdullah</option>
-   <option value="Khalid">Khalid Ibrahim</option>
-   <option value="Saleh">Saleh Sulaiman</option>
-   <option value="Mohammed">Mohammed Ali</option>
-   <option value="Sarah">Sarah Abdulrahman</option>
-   <option value="Fatimah">Fatimah Fares</option>
-    </select></br>
-
- 
- <button type="submit" >Search</button> <button type="reset" >reset</button>
+    {% csrf_token %}
+    {{form}}
+    <br>
+    <button type="submit">Add</button>
 </form>
 <a href="\">Go Back</a><br/><br/>
 {% endblock content %}

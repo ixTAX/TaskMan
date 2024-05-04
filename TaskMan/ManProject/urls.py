@@ -8,4 +8,5 @@ urlpatterns = [
     path('tasks/', views.TaskTable, name='TaskTable'),
     path('search/', views.SearchTitle, name='SearchTitle'),
     path('addtask/', views.AddTask, name='AddTask'),
+    path('users/', views.all_user),
 ]
