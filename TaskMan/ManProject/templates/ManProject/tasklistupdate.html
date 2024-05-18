@@ -1,0 +1,86 @@
+{% extends "layouts/base.html" %}
+{% block title %}Tasks{% endblock %}
+{% block content %}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+        text-align: center;
+        margin: 0;
+        padding: 0;}
+
+    p {
+        font-size: 1.2em;
+        margin-top: 20px;}
+
+    table {
+        width: 80%;
+        margin: 25px auto;
+        border-collapse: collapse;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        font-size: 1em;
+        text-align: left;}
+
+    th, td {
+        padding: 12px 15px;
+        border: 1px solid #dddddd;}
+
+    thead {
+        background-color: #007bff;
+        color: #ffffff;}
+
+    tbody tr {
+        background-color: #f3f3f3;
+        transition: background-color 0.3s ease;}
+
+    tbody tr:nth-child(even) {
+        background-color: #f9f9f9;}
+
+    tbody tr:hover {
+        background-color: #f1f1f1;}
+
+    a {
+        color: #007bff;
+        text-decoration: none;}
+
+    a:hover {
+        text-decoration: underline;}
+
+    .back-link {
+        margin-top: 20px;
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;}
+
+    .back-link:hover {
+        background-color: #0056b3;}
+
+    p {
+        font-size: 1.5em;
+        margin-top: 20px;
+        color: #007bff;
+        text-align: center;}
+</style>
+
+   <p>Choose a Task to Update:</p>
+   <table>
+    <tr>
+        <th>Task Title</th>
+        <th>Task Description</th>
+        <th>Task Holder</th>
+    </tr>
+    {% for b in tasks %}
+        <tr>
+            <td><a href="{% url 'updatetask' bId=b.id %}">{{b.title}}</a></td>
+            <td>{{b.desc}}</td>
+            <td>{{b.holder}}</td>
+        </tr>
+    {%endfor%}
+</table>
+<br/><a href="\">Go Back</a><br/><br/>
+{% endblock content %}

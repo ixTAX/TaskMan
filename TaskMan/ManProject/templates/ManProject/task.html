@@ -1,0 +1,61 @@
+{% extends "layouts/base.html" %}
+{% block title %}Task Info{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <style> 
+        a {
+        display: inline-block;
+        margin: 20px 0;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: #fff;
+        background-color: #007bff;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;}
+
+    a:hover {
+        background-color: #0056b3;}
+        
+    a:active {
+        background-color: #004085;}
+    </style>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h3>Task Details</h3>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Task Title</h4>
+                    <p class="card-text">{{ task.title }}</p>
+                    <h4 class="card-title">Task Description</h4>
+                    <p class="card-text">{{ task.desc }}</p>
+                    <h4 class="card-title">Task Holder</h4>
+                    <p class="card-text">{{ task.holder }}</p>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="input_check" name="delete_checked">
+                            <label class="form-check-label text-danger" for="input_check">Delete task</label>
+                        </div>
+                        <button type="submit" id="delete_button" name="delete" class="btn btn-danger mt-3" style="display: none;">Delete</button>
+                    </form>
+                </div>
+            </div>
+            <center>
+            <a href="/tasklist" class="btn btn-secondary mt-3">Go Back</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block javascripts %}
+<script>
+    const check = document.querySelector('#input_check');
+    const button = document.querySelector('#delete_button');
+
+    check.addEventListener('change', () => {
+        button.style.display = check.checked ? 'block' : 'none';
+    });
+</script>
+{% endblock javascripts %}

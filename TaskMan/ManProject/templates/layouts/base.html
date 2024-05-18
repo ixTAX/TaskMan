@@ -7,6 +7,7 @@
  <title>
  Task Management - {% block title %}{% endblock %}
  </title>
+ {% block stylesheets %}{% endblock stylesheets %}
  </head>
  <body>
  {% include 'includes/header.html' %}
@@ -17,5 +18,7 @@
  
  {% include 'includes/sidebar2.html' %}
  {% include 'includes/footer.html' %}
+ {% block javascripts %}
+ {% endblock javascripts %}
  </body>
 </html>
